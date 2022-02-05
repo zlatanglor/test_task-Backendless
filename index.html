@@ -1,14 +1,70 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="backendless">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+<header>
+    <div class="container-fluid d-flex">
+        <a class="logo" href="index.html">Backendless</a>
+        <form action="#" method="post">
+            <div>
+                <input type="radio" id="light_theme" name="theme" value="light">
+                <label for="light_theme">Light Theme</label>
+            </div>
+            <div>
+                <input type="radio" id="dark_theme" name="theme" value="dark">
+                <label for="dark_theme">Dark Theme</label>
+            </div>
+            <div>
+                <input type="radio" id="backendless_theme" name="theme" value="backendless" checked>
+                <label for="backendless_theme">Backendless Theme</label>
+            </div>
+        </form>
+    </div>
+</header>
+<main>
 
+</main>
+<footer>
+    <nav class="container-fluid d-flex">
+        <ul class="info d-flex">
+            <li>
+                <a class="site" href="index.html">backendless.com</a>
+            </li>
+            <li>
+                <a class="number" href="tel:555555555">555-555-555</a>
+            </li>
+        </ul>
+        <ul class="social d-flex">
+            <li>
+                <a href="https://www.linkedin.com/company/backendless-corp/" target="_blank"><i class="fab fa-linkedin"></i></a>
+            </li>
+            <li>
+                <a href="https://twitter.com/Backendless" target="_blank"><i class="fab fa-twitter-square"></i></a>
+            </li>
+            <li>
+                <a href="https://www.facebook.com/backendless" target="_blank"><i class="fab fa-facebook"></i></a>
+            </li>
+            <li>
+                <a href="https://github.com/Backendless" target="_blank"><i class="fab fa-github"></i></a>
+            </li>
+            <li>
+                <a href="https://www.youtube.com/backendless" target="_blank"><i class="fab fa-youtube-square"></i></a>
+            </li>
+        </ul>
+    </nav>
+</footer>
+<script src="https://kit.fontawesome.com/41bcebc9a3.js" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="js/scripts.js"></script>
 </body>
 </html>

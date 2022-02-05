@@ -1,0 +1,91 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}html.light{
+    --background: white;
+    --color: black;
+
+ }
+ html.dark{
+    --background: black;
+     --color: white;
+ }
+ html.backendless{
+     --background: tomato;
+     --color: white;
+
+ }
+body{
+    /*background-color: var(--background);*/
+    /*color: var(--color);*/
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+.container-fluid{
+    padding: 0 15px;
+    box-sizing: border-box;
+}
+.d-flex{
+    display: flex;
+    justify-content: space-between;
+}
+header{
+    background-color: var(--background);
+    height: 50px;
+    line-height: 50px;
+    flex: 0 0 auto;
+}
+header .logo{
+    color: var(--color);
+    font-size: 24px;
+    font-weight: 700;
+}
+header form{
+    display: flex;
+}
+header form div + div {
+    margin-left: 15px;
+}
+main{
+    flex: 1 1 auto;
+}
+footer{
+    background-color: var(--background);
+    height: 50px;
+    line-height: 50px;
+    flex: 0 0 auto;
+}
+footer .info a, footer .social a{
+    color: var(--color);
+    font-size: 20px;
+}
+footer .info li + li{
+    margin-left: 15px;
+}
+footer .social li + li{
+    margin-left: 10px;
+}
+@media screen and (max-width:1079px) {
+    header form input[type="radio"]{
+        color: white;
+    }
+
+}
+@media screen and (max-width:639px){
+    footer{
+        line-height: 25px;
+    }
+    footer nav.d-flex{
+        flex-direction: column;
+        align-items: center;
+    }
+    footer .info a, footer .social a{
+        font-size: 18px;
+    }
+
+}
