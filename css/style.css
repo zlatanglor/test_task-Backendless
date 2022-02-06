@@ -4,11 +4,11 @@
     list-style: none;
     text-decoration: none;
     box-sizing: border-box;
-}html.light{
+}
+html.light{
     --background: #95daf5;
      --main: rgba(149,218,245,0.5);
     --color: #8f808a;
-
  }
  html.dark{
     --background: black;
@@ -19,7 +19,6 @@
      --background: tomato;
      --main: rgba(255,99,71,0.75);
      --color: white;
-
  }
 body{
     color: var(--color);
@@ -31,7 +30,8 @@ body{
 }
 .container-fluid{
     padding: 0 15px;
-    box-sizing: border-box;
+    max-width: 1430px;
+    margin: auto;
 }
 .d-flex{
     display: flex;
@@ -47,6 +47,11 @@ header .logo{
     color: var(--color);
     font-size: 24px;
     font-weight: 700;
+    transition: opacity 0.3s ease-in, text-shadow 0.3s ease-in;
+}
+header .logo:hover{
+    text-shadow: 1px 0 3px;
+    opacity: 0.8;
 }
 header form{
     display: flex;
@@ -64,6 +69,7 @@ main h1{
     text-align: center;
     margin-bottom: 15px;
     font-weight: 700;
+    animation: text 3s infinite;
 }
 section{
     display: grid;
@@ -114,10 +120,16 @@ section{
     grid-area: item12;
 }
 
+.gallery_item:hover img{
+    transform: scale(1.05);
+    box-shadow: 0 0 5px var(--color);
+}
+
 section img{
     width: 100%;
     height: 100%;
     display: inline-block;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 main section + section{
     margin-top: 15px;
@@ -165,6 +177,11 @@ footer{
 footer .info a, footer .social a{
     color: var(--color);
     font-size: 20px;
+    transition: color 0.3s ease-in, transform 0.3s ease-in;
+}
+footer .social a:hover i{
+    color: #cecccd;
+    transform: scale(1.1);
 }
 footer .info li + li{
     margin-left: 15px;
@@ -172,12 +189,35 @@ footer .info li + li{
 footer .social li + li{
     margin-left: 10px;
 }
+@media screen and (min-width:1080px){
+    .mobile{
+        display: none;
+    }
+    .tablet{
+        display: none;
+    }
+}
 @media screen and (max-width:1079px) {
+    .mobile{
+        display: none;
+    }
+    .desktop{
+        display: none;
+    }
 
 
 }
 
 @media screen and (max-width:639px){
+    .desktop{
+        display: none;
+    }
+    .tablet{
+        display: none;
+    }
+    .mobile{
+        display: block;
+    }
     footer{
         line-height: 25px;
     }
@@ -189,4 +229,16 @@ footer .social li + li{
         font-size: 18px;
     }
 
+}
+@keyframes text{
+    0%{
+    }
+    25%{
+        /*font-size:45px;*/
+        transform: scale(1.1);
+        letter-spacing: 10px;
+    }
+    50%{
+        text-shadow: 0 2px 5px;
+    }
 }

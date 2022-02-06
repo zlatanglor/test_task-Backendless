@@ -15,7 +15,7 @@
 <header>
     <div class="container-fluid d-flex">
         <a class="logo" href="index.html">Backendless</a>
-        <form action="#" method="post">
+        <form class="desktop" action="#" method="post">
             <div>
                 <input type="radio" id="light_theme" name="theme" value="light">
                 <label for="light_theme">Light Theme</label>
@@ -28,6 +28,20 @@
                 <input type="radio" id="backendless_theme" name="theme" value="backendless" checked>
                 <label for="backendless_theme">Backendless Theme</label>
             </div>
+        </form>
+        <form class="tablet" action="#">
+            <input type="button" value="light">
+            <button type="button" value="light">Light Theme</button>
+            <button type="button" value="dark">Dark Theme</button>
+            <button type="button" value="backendless">Backendless Theme</button>
+        </form>
+        <form class="mobile" action="#">
+            <label for="select_theme"></label>
+            <select name="theme" id="select_theme">
+                <option value="light">Light Theme</option>
+                <option value="dark">Dark Theme</option>
+                <option value="backendless" selected>Backendless Theme</option>
+            </select>
         </form>
     </div>
 </header>
