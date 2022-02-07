@@ -26,9 +26,9 @@ body{
     font-weight: 400;
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    min-height: 100vh;
 }
-.container-fluid{
+.container{
     padding: 0 15px;
     max-width: 1430px;
     margin: auto;
@@ -38,6 +38,7 @@ body{
     justify-content: space-between;
     align-items: center;
 }
+/*Header*/
 header{
     background-color: var(--background);
     height: 50px;
@@ -70,12 +71,6 @@ form.desktop input:checked + label{
 form.desktop label{
     cursor: pointer;
 }
-/*form.desktop label:hover{*/
-/*    border: 1px solid;*/
-/*    padding: 5px;*/
-/*    border-radius: 5px;*/
-/*    box-shadow: 0 0 3px;*/
-/*}*/
 form.mobile select{
     font-family: 'Open Sans', sans-serif;
     font-size: 10px;
@@ -102,6 +97,7 @@ form.tablet button:hover{
 form.tablet button + button{
     margin-left: 15px;
 }
+/*Main*/
 main{
     flex: 1 1 auto;
     padding: 20px 0;
@@ -114,7 +110,7 @@ main h1{
     font-weight: 700;
     animation: text 3s infinite;
 }
-section{
+section.gallery{
     display: grid;
     grid-gap: 15px;
     grid-template-areas:
@@ -126,6 +122,7 @@ section{
     'item11 item10 item10 item10'
     'item12 item10 item10 item10';
 }
+/*Grid-areas*/
 .item1{
     grid-area: item1;
 }
@@ -162,7 +159,6 @@ section{
 .item12{
     grid-area: item12;
 }
-
 .gallery_item:hover img{
     transform: scale(1.05);
     box-shadow: 0 0 5px var(--color);
@@ -170,7 +166,6 @@ section{
 .gallery_item{
     cursor: pointer;
 }
-
 section img{
     width: 100%;
     height: 100%;
@@ -180,40 +175,33 @@ section img{
 main section + section{
     margin-top: 15px;
 }
-@media screen and (max-width:768px){
-    section{
-        grid-template-areas:
-    'item1 item1 item2'
-    'item1 item1 item3'
-    'item4 item4 item5'
-    'item4 item4 item6'
-    'item7 item7 item8'
-    'item7 item7 item9'
-    'item10 item10 item11'
-    'item10 item10 item12'
-    ;
-    }
+/*Modal*/
+.popup {
+    position: absolute;
+    height:100%;
+    width:100%;
+    top:0;
+    left:0;
+    display:none;
+    text-align:center;
 }
-@media screen and (max-width:640px){
-    section{
-        grid-gap: 10px;
-        grid-template-areas:
-    'item1 item1 item1'
-    'item2 item3 item4'
-    'item5 item5 item5'
-    'item6 item7 item8'
-    'item9 item9 item9'
-    'item10 item11 item12'
-    ;
-    }
-    main h1{
-        font-size: 19px;
-    }
-    main section + section{
-        margin-top: 10px;
-    }
+.popup_bg {
+    background:rgba(0,0,0,0.4);
+    position:absolute;
+    z-index:1;
+    height:100%;
+    width:100%;
 }
-
+.popup_img {
+    position: relative;
+    z-index: 2;
+    top: 50%;
+    transform: translateY(-50%);
+    max-width: 1000px;
+    max-height: 600px;
+    width: 100%;
+}
+/*footer*/
 footer{
     background-color: var(--background);
     height: 50px;
@@ -235,6 +223,7 @@ footer .info li + li{
 footer .social li + li{
     margin-left: 10px;
 }
+/*media query*/
 @media screen and (min-width:1080px){
     .mobile{
         display: none;
@@ -250,10 +239,20 @@ footer .social li + li{
     .desktop{
         display: none;
     }
-
-
 }
-
+@media screen and (max-width:768px){
+    section{
+        grid-template-areas:
+    'item1 item1 item2'
+    'item1 item1 item3'
+    'item4 item4 item5'
+    'item4 item4 item6'
+    'item7 item7 item8'
+    'item7 item7 item9'
+    'item10 item10 item11'
+    'item10 item10 item12';
+    }
+}
 @media screen and (max-width:639px){
     .desktop{
         display: none;
@@ -263,6 +262,22 @@ footer .social li + li{
     }
     .mobile{
         display: block;
+    }
+    section{
+        grid-gap: 10px;
+        grid-template-areas:
+    'item1 item1 item1'
+    'item2 item3 item4'
+    'item5 item5 item5'
+    'item6 item7 item8'
+    'item9 item9 item9'
+    'item10 item11 item12';
+    }
+    main h1{
+        font-size: 19px;
+    }
+    main section + section{
+        margin-top: 10px;
     }
     footer{
         line-height: 25px;
@@ -274,7 +289,6 @@ footer .social li + li{
     footer .info a, footer .social a{
         font-size: 18px;
     }
-
 }
 @keyframes text{
     0%{
