@@ -241,7 +241,7 @@ footer .social li + li{
     }
 }
 @media screen and (max-width:768px){
-    section{
+    section.gallery{
         grid-template-areas:
     'item1 item1 item2'
     'item1 item1 item3'
@@ -263,7 +263,7 @@ footer .social li + li{
     .mobile{
         display: block;
     }
-    section{
+    section.gallery{
         grid-gap: 10px;
         grid-template-areas:
     'item1 item1 item1'
